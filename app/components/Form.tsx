@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function FormOrder ({
   firstNameProp,
@@ -56,6 +56,13 @@ export default function FormOrder ({
     }
     console.log(data);
   }
+
+  useEffect(() => {
+    setFirstName(firstNameProp);
+    setLastName(lastNameProp);
+    setAddress(addressProp);
+    setQuantity(quantityProp);
+  }, [firstNameProp, lastNameProp, addressProp, quantityProp,]);
 
   return <div>
     <form onSubmit={submit}>
