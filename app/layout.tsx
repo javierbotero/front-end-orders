@@ -18,11 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} flex min-h-screen flex-col items-center justify-between p-24`}>
-        <header>
-          <ul>
+        <header className="flex flex-row">
+          <ul className="basis-1/4 border-solid border-2 border-gray-500 px-5 mx-2">
             <Link href="/orders/list">Orders</Link>
           </ul>
-          <ul>
+          <ul className="basis-1/4 border-solid border-2 border-gray-500 px-5 mx-2">
             <Link href="/">Products</Link>
           </ul>
         </header>

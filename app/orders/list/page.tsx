@@ -50,13 +50,13 @@ export default function ListOrders() {
       <div>{message}</div>
       <ul>
         {orders.map(order => (
-          <li key={order.id}>
+          <li key={order.id} className="my-5">
             <Link
               href={`/orders/${order.id}`}
             >
               Order {` ${order.id}`}
             </Link>
-            <button onClick={deleteOrder} id={order.id}>Delete</button>
+            <button onClick={deleteOrder} id={order.id} className="rounded-md mx-2 bg-red-400 p-3">Delete</button>
           </li>
         ))}
       </ul>

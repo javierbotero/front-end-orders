@@ -65,7 +65,7 @@ export default function FormOrder ({
   }, [firstNameProp, lastNameProp, addressProp, quantityProp,]);
 
   return <div>
-    <form onSubmit={submit}>
+    <form onSubmit={submit} className="text-center p-5">
       <div>{notification}</div>
       <fieldset>
         <legend>First Name</legend>
@@ -86,7 +86,7 @@ export default function FormOrder ({
         <legend>Quantity</legend>
         <input value={quantity} onChange={updateField} id="quantity" />
       </fieldset>
-      <input type="submit" />
+      <input type="submit" className="p-3 mt-3 border-solid border-2 border-gray-500"/>
     </form>
   </div>;
 }

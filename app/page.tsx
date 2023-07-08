@@ -13,21 +13,26 @@ export default async function Home() {
   const productsList = await fetchProducts();
   return (
     <main className="">
+      <ul>
       {productsList.map(obj => {
-        return <Link
-          key={obj.id}
-          href={
-            {
-              pathname: '/orders',
-              query: {
-                productId: obj.id,
-                name: obj.name
-              }
-            }
-          }>
-          {obj.name}
-        </Link>
+        return (
+          <li key={obj.id} className="p-3 border-solid border-2 border-black-500">
+            <Link
+              href={
+                {
+                  pathname: '/orders',
+                  query: {
+                    productId: obj.id,
+                    name: obj.name
+                  }
+                }
+              }>
+              {obj.name}
+            </Link>
+          </li>
+        )
       })}
+      </ul>
     </main>
   )
 }
